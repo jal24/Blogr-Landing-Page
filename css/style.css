@@ -1,3 +1,160 @@
+/***************
+    Variables
+****************/
+/*  Colors  */
+/*  Gradients  */
+/*  Typography  */
+/*  Utility Classes  */
+.container {
+  margin: 0 5.1rem 1.1rem 5.1rem;
+}
 
+/***************
+  Global Styles
+****************/
+body {
+  all: unset;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #F6F6F6;
+}
+
+/***************
+  Components
+****************/
+/*  Buttons  */
+.btn {
+  background-color: white;
+  color: #ff525d;
+}
+.btn, .btn--outline {
+  border-radius: 1rem;
+  width: 4.5rem;
+  padding: 0.4rem 0;
+  font-size: 0.55rem;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Ubuntu";
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: #ff7a85;
+  color: white;
+}
+.btn--outline {
+  border: 1px solid white;
+  color: white;
+  margin-left: 0.5rem;
+}
+.btn--outline:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #ff7a85;
+}
+
+/***************
+  Header Styles
+****************/
+.cta {
+  background-image: url("/images/bg-pattern-intro.svg"), linear-gradient(to right, #ff8f70, #ff3d54);
+  background-size: 205%;
+  background-position: -11rem -41rem;
+  border-bottom-left-radius: 3rem;
+  padding-bottom: 6rem;
+}
+.cta_heading, .cta_subheading {
+  font-family: "Overpass";
+  color: white;
+  text-align: center;
+}
+.cta_heading {
+  margin-bottom: 0.5rem;
+}
+.cta_subheading {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+.cta_btn--container {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1.65rem;
+  margin-bottom: 4rem;
+}
+.navbar_logo {
+  width: 3.45rem;
+  height: 1.25rem;
+  padding-right: 1.5rem;
+}
+.navbar a {
+  text-decoration: none;
+  font-family: "Ubuntu";
+  font-size: 0.55rem;
+  color: white;
+}
+.navbar_links--container {
+  width: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar_login--container {
+  width: 6.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar_login--container a {
+  padding-top: 0.65rem;
+  line-height: 0;
+}
+.navbar_sub {
+  height: 1.5rem;
+}
+.navbar_sub--content {
+  top: 3.2rem;
+  display: none;
+  flex-direction: column;
+  width: 4rem;
+  position: absolute;
+  background-color: #F6F6F6;
+  padding: 0.75rem;
+  border-radius: 0.185rem;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+.navbar_sub--content a {
+  color: #25252d;
+  padding-bottom: 0.3rem;
+}
+.navbar_sub:hover .navbar_sub--content {
+  display: flex;
+}
+.navbar_sub:hover .navbar_sub--btn::after {
+  background-image: none;
+  background-image: url("/images/icon-close.svg");
+}
+.navbar_sub--btn {
+  line-height: 0.1rem;
+}
+.navbar_sub--btn::after {
+  background-image: url("/images/icon-arrow-light.svg");
+  background-size: 0.3rem 0.2rem;
+  background-repeat: no-repeat;
+  background-position: 0.25rem 0.25rem;
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.5rem;
+  content: "";
+}
+.navbar_link:hover {
+  font-weight: 600;
+}
+
+/*  Media Queries  */
 
 /*# sourceMappingURL=style.css.map */
