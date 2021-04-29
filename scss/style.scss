@@ -35,6 +35,46 @@ $ubuntu: 'Ubuntu';
     margin: 0 5.1rem 1.1rem 5.1rem;
 }
 
+.flex{
+    display: flex;
+}
+
+.row{
+    flex-direction: row;
+}
+
+.col{
+    flex-direction: column;
+}
+
+.center{
+    text-align: center;
+}
+
+.clip{
+    overflow: hidden;
+}
+
+.w-5{
+    width: clamp(45%, 50%, 55%);
+}
+
+.m-0{
+    margin: 0;
+}
+
+.pt-4{
+    padding-top: 6rem;
+}
+
+.mobile{
+    display: none;
+}
+
+.flow{
+    flex-flow: wrap;
+}
+
 /***************
   Global Styles
 ****************/
@@ -44,6 +84,7 @@ body{
     box-sizing: border-box;
     font-size: 16px;
     background-color: #F6F6F6;
+    overflow-x: hidden;
 }
 
 /***************
@@ -95,7 +136,7 @@ body{
     background-size: 205%;
     background-position: -11rem -41rem;
     border-bottom-left-radius: 3rem;
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
 
     &_heading, &_subheading{
         font-family: $overpass;
@@ -111,7 +152,7 @@ body{
         margin-top: 0;
         margin-bottom: 1.5rem;
         font-weight: 300;
-        font-size: .75rem;
+        font-size: .65rem;
     }
 
     &_btn--container{
@@ -144,6 +185,10 @@ body{
         width: 15rem;
         display: flex;
         justify-content: space-between;
+    }
+
+    &_login:hover{
+        text-decoration: underline;
     }
 
     &_login--container{
@@ -180,20 +225,25 @@ body{
         }
 
         &:hover &--btn::after{
-            background-image: none;
-            background-image: url("/images/icon-close.svg");
+            transform: rotate(180deg);
+        }
+
+        &:hover &--btn{
+            text-decoration: underline;
         }
 
         &--btn{
             line-height: .1rem;
             &::after{
                 background-image: url("/images/icon-arrow-light.svg");
+                position:absolute;
+                top: 1.95rem;
                 background-size: .3rem .2rem;
                 background-repeat: no-repeat;
-                background-position: .25rem .25rem;
+                background-position: center;
                 display: inline-block;
                 width: .75rem;
-                height: .5rem;
+                height: .75rem;
                 content: "";
             }
         }
@@ -204,12 +254,151 @@ body{
     }
 }
 
+/***************
+  Body Styles
+****************/
+
 .section{
-    
+    &_heading, &_subheading, &_heading--light{
+        font-family: $overpass;
+        color: $very-dark-blue;
+    }
+
+    &_heading{
+        font-size: 1.25rem;
+        margin-top: 5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &_subheading{
+        font-size: 1rem;
+        margin-bottom: .5rem;
+    }
+
+    &_paragraph, &_paragraph--light{
+        font-family: $overpass;
+        font-size: .6rem;
+        line-height: 1rem;
+    }
+
+    &_paragraph{
+        color: $very-dark-grayish-blue;
+    }
+
+    &_paragraph:last-of-type{
+        margin-bottom: 7.75rem;
+    }
+
+    &_heading--light, &_paragraph--light{
+        color: $white;
+    }
+
+    &_heading--light{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        margin-top: 3.5rem;
+    }
+
+    &_paragraph--light{
+        margin-top: 0;
+        font-weight: 400;
+    }
+
+    &--dark{
+        background-image: url("/images/bg-pattern-circles.svg"),linear-gradient(to right, $dark-gray-blue , $desaturated-blue);
+        background-repeat: no-repeat;
+        background-size: 70%, 200%, 100%;
+        background-position: -8rem bottom;
+        height: 13rem;
+        border-top-right-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+        margin-bottom: 4rem;
+    }
+}
+
+/*  Images  */
+
+.img_editor{
+    width: 29rem;
+    height: 29rem;
+    margin-left: 0;
+    position: absolute;
+    right: -9rem;
+    bottom: -12rem;
+    z-index: -1;
+}
+
+.img_phone{
+    width: 18.5rem;
+    height: 18.5rem;
+    margin-right: 1rem;
+    position: relative;
+    bottom: 2.15rem;
+    left: -1.1rem;
+}
+
+.img_laptop{
+    width: 35rem;
+    height: 29rem;
+    margin-right: 0;
+    position: relative;
+    left: -15rem;
+}
+
+/***************
+  Footer Styles
+****************/
+
+.footer{
+
+    background: $very-dark-black-blue;
+    border-top-right-radius: 3rem;
+    margin-top: 4.5rem;
+    padding: 2rem 0;
+
+    &_logo{
+        width: 3.45rem;
+        height: 1.25rem;
+        transform: translateY(.75rem);
+    }
+
+    &_heading, &_link{
+        font-family: $ubuntu;
+        color: $grayish-blue;
+        font-size: .6rem;
+    }
+
+    &_heading{
+        color: $white;
+        padding-bottom: .75rem;
+    }
+
+    &_link{
+        padding-bottom: .6rem;
+        text-decoration: none;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    &_container{
+        justify-content: space-between;
+    }
+
+    &_col{
+        width: 20%;
+    }
 }
 
 /*  Media Queries  */
 
 @media screen and (max-width: 500px) {
-    
+    .desktop{
+        display: none;
+    }
+
+    .mobile{
+        display: block;
+    }
 } 

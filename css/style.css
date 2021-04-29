@@ -9,6 +9,46 @@
   margin: 0 5.1rem 1.1rem 5.1rem;
 }
 
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.center {
+  text-align: center;
+}
+
+.clip {
+  overflow: hidden;
+}
+
+.w-5 {
+  width: clamp(45%, 50%, 55%);
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.pt-4 {
+  padding-top: 6rem;
+}
+
+.mobile {
+  display: none;
+}
+
+.flow {
+  flex-flow: wrap;
+}
+
 /***************
   Global Styles
 ****************/
@@ -17,6 +57,7 @@ body {
   box-sizing: border-box;
   font-size: 16px;
   background-color: #F6F6F6;
+  overflow-x: hidden;
 }
 
 /***************
@@ -60,7 +101,7 @@ body {
   background-size: 205%;
   background-position: -11rem -41rem;
   border-bottom-left-radius: 3rem;
-  padding-bottom: 6rem;
+  padding-bottom: 4rem;
 }
 .cta_heading, .cta_subheading {
   font-family: "Overpass";
@@ -74,7 +115,7 @@ body {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-weight: 300;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
 }
 .cta_btn--container {
   display: flex;
@@ -103,6 +144,9 @@ body {
   width: 15rem;
   display: flex;
   justify-content: space-between;
+}
+.navbar_login:hover {
+  text-decoration: underline;
 }
 .navbar_login--container {
   width: 6.5rem;
@@ -135,26 +179,154 @@ body {
   display: flex;
 }
 .navbar_sub:hover .navbar_sub--btn::after {
-  background-image: none;
-  background-image: url("/images/icon-close.svg");
+  transform: rotate(180deg);
+}
+.navbar_sub:hover .navbar_sub--btn {
+  text-decoration: underline;
 }
 .navbar_sub--btn {
   line-height: 0.1rem;
 }
 .navbar_sub--btn::after {
   background-image: url("/images/icon-arrow-light.svg");
+  position: absolute;
+  top: 1.95rem;
   background-size: 0.3rem 0.2rem;
   background-repeat: no-repeat;
-  background-position: 0.25rem 0.25rem;
+  background-position: center;
   display: inline-block;
   width: 0.75rem;
-  height: 0.5rem;
+  height: 0.75rem;
   content: "";
 }
 .navbar_link:hover {
   font-weight: 600;
 }
 
+/***************
+  Body Styles
+****************/
+.section_heading, .section_subheading, .section_heading--light {
+  font-family: "Overpass";
+  color: #1f3f5b;
+}
+.section_heading {
+  font-size: 1.25rem;
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+}
+.section_subheading {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.section_paragraph, .section_paragraph--light {
+  font-family: "Overpass";
+  font-size: 0.6rem;
+  line-height: 1rem;
+}
+.section_paragraph {
+  color: #4b5862;
+}
+.section_paragraph:last-of-type {
+  margin-bottom: 7.75rem;
+}
+.section_heading--light, .section_paragraph--light {
+  color: white;
+}
+.section_heading--light {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 3.5rem;
+}
+.section_paragraph--light {
+  margin-top: 0;
+  font-weight: 400;
+}
+.section--dark {
+  background-image: url("/images/bg-pattern-circles.svg"), linear-gradient(to right, #2c2d3f, #3f4164);
+  background-repeat: no-repeat;
+  background-size: 70%, 200%, 100%;
+  background-position: -8rem bottom;
+  height: 13rem;
+  border-top-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  margin-bottom: 4rem;
+}
+
+/*  Images  */
+.img_editor {
+  width: 29rem;
+  height: 29rem;
+  margin-left: 0;
+  position: absolute;
+  right: -9rem;
+  bottom: -12rem;
+  z-index: -1;
+}
+
+.img_phone {
+  width: 18.5rem;
+  height: 18.5rem;
+  margin-right: 1rem;
+  position: relative;
+  bottom: 2.15rem;
+  left: -1.1rem;
+}
+
+.img_laptop {
+  width: 35rem;
+  height: 29rem;
+  margin-right: 0;
+  position: relative;
+  left: -15rem;
+}
+
+/***************
+  Footer Styles
+****************/
+.footer {
+  background: #25252d;
+  border-top-right-radius: 3rem;
+  margin-top: 4.5rem;
+  padding: 2rem 0;
+}
+.footer_logo {
+  width: 3.45rem;
+  height: 1.25rem;
+  transform: translateY(0.75rem);
+}
+.footer_heading, .footer_link {
+  font-family: "Ubuntu";
+  color: #c8c8cb;
+  font-size: 0.6rem;
+}
+.footer_heading {
+  color: white;
+  padding-bottom: 0.75rem;
+}
+.footer_link {
+  padding-bottom: 0.6rem;
+  text-decoration: none;
+}
+.footer_link:hover {
+  text-decoration: underline;
+}
+.footer_container {
+  justify-content: space-between;
+}
+.footer_col {
+  width: 20%;
+}
+
 /*  Media Queries  */
+@media screen and (max-width: 500px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
